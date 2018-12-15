@@ -1,0 +1,35 @@
+{
+  "name": "ngain-cli",
+  "version": "1.0.0",
+  "description": "an Angular boilerplates generator",
+  "keywords": [
+    "Angular",
+    "cli",
+    "generator",
+    "boilerplates"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BarryLiu1995/ngain-cli"
+  },
+  "main": "index.js",
+  "bin": {
+    "ngain": "./bin/ngain.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "BarryLiu1995",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "fs-extra": "^7.0.1",
+    "map-stream": "0.0.7",
+    "ora": "^3.0.0",
+    "readline": "^1.3.0",
+    "vinyl-fs": "^3.0.3",
+    "which": "^1.3.1"
+  }
+}
