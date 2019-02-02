@@ -6,6 +6,7 @@ const download = require('download-git-repo');
 const ora = require('ora');
 const vfs = require('vinyl-fs');
 const map = require('map-stream');
+const cheerio = require('cheerio');
 
 const common = require('./common');
 const {message, write} = common;
@@ -32,7 +33,7 @@ function initComplete(app) {
   message.light(`begin by typing:
 
     cd ${app}
-    npm start
+    npm start / npm run hmr
     
     `)
   process.exit();
@@ -65,6 +66,19 @@ function modifyJSON(dest, fileName) {
   write(filePath, JSON.stringify(modifiedFile, null, 2));
 }
 
+// 修改 Index.html 的标题
+function modifyHTML(dest, fileName) {
+  const app = basename(dest);
+  const filePath = `${dest}/${fileName}`;
+  let $ = cheerio.load(fs.readFileSync(filePath, 'utf-8'), {
+    normalizeWhitespace: true
+  });
+  let result = app.toLowerCase().replace(/(-|^)[a-z]/g, (L) => L.toUpperCase());
+  $('title').text(result.replace(/-/g, ''));
+  $('html').attr('lang', 'zh');
+  write(filePath, $.html());
+}
+
 // 创建项目
 function createProject(dest) {
   const spinner = ora('downloading template ......');
@@ -94,6 +108,7 @@ function createProject(dest) {
             modifyJSON(dest, 'package-lock.json');
             modifyJSON(dest, 'package.json');
             modifyJSON(dest, 'angular.json');
+            modifyHTML(dest, 'src/index.html');
             message.info('run install packages');
             require('./install')({
               success: initComplete.bind(null, basename(dest)),
