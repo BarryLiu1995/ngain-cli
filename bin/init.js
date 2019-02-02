@@ -56,6 +56,7 @@ function modifyJSON(dest, fileName) {
     modifiedFile.projects[`${app}`].architect.serve.options.browserTarget = `${app}:build`;
     modifiedFile.projects[`${app}`].architect.serve.configurations.production.browserTarget = `${app}:build:production`;
     modifiedFile.projects[`${app}`].architect.serve.configurations.staging.browserTarget = `${app}:build:staging`;
+    modifiedFile.projects[`${app}`].architect.serve.configurations.hmr.browserTarget = `${app}:build:hmr`;
     modifiedFile.projects[`${app}`].architect['extract-i18n'].options.browserTarget = `${app}:build`;
 
     modifiedFile.projects[`${app}-e2e`].architect.e2e.options.devServerTarget = `${app}:serve`;
