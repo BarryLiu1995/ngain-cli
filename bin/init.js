@@ -17,7 +17,7 @@ const rl = readLine.createInterface({
 });
 
 // download-git-repo 的下载函数的第一个参数，即模板项目在GitHub的名称
-const template = 'BarryLiu1995/front-end-project-standard-demo';
+const template = 'BarryLiu1995/angular-project-template';
 
 // 下载模板项目到新创建项目的目标路径
 const boilerplatePath = join(__dirname, '../boilerplate');
