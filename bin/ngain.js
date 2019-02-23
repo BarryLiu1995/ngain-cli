@@ -16,7 +16,7 @@ program
   .alias('n')
   .description('Create a new project')
   .action(name => {
-    const projectName = name || 'myAngularApp';
+    const projectName = name || 'my-angular-app';
     init({ app: projectName})
   });
 

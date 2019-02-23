@@ -48,10 +48,10 @@ function modifyJSON(dest, fileName) {
     modifiedFile.name = `${app}`;
   } else if (fileName === 'angular.json') {
     modifiedFile.defaultProject = `${app}`;
-    modifiedFile.projects[`${app}`] = modifiedFile.projects['front-end-project-standard-demo'];
-    modifiedFile.projects[`${app}-e2e`] = modifiedFile.projects['front-end-project-standard-demo-e2e'];
-    delete modifiedFile.projects['front-end-project-standard-demo'];
-    delete modifiedFile.projects['front-end-project-standard-demo-e2e'];
+    modifiedFile.projects[`${app}`] = modifiedFile.projects['angular-project-template'];
+    modifiedFile.projects[`${app}-e2e`] = modifiedFile.projects['angular-project-template-e2e'];
+    delete modifiedFile.projects['angular-project-template'];
+    delete modifiedFile.projects['angular-project-template-e2e'];
 
     modifiedFile.projects[`${app}`].architect.build.options.outputPath = `dist/${app}`;
     modifiedFile.projects[`${app}`].architect.serve.options.browserTarget = `${app}:build`;

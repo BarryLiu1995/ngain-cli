@@ -25,4 +25,4 @@ ngain -v
 
 ## 项目模板来源
 
-[front-end-project-standard-demo](https://github.com/BarryLiu1995/front-end-project-standard-demo)
+[BarryLiu1995/angular-project-template](https://github.com/BarryLiu1995/angular-project-template)
