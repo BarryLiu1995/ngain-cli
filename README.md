@@ -1,28 +1,57 @@
 # ngain-cli
 
-## 项目背景
+## Description
 
-近期个人根据以往开发经历，制定了一个适用于企业及其个人项目使用的 angular 脚手架模板。为了节省 `git clone`、`npm install` 以及手动修改项目一些配置文件中的项目名称相关字段值的重复性工作，于是开发了本命令行工具。
+Based on past development experiences, I have encapsulated an Angular project template for use by companies and their individual projects. In order to avoid the repetitive work of `git clone`, `npm install` and manually modifying the project name-related field values in some configuration files of the project, the scaffolding tool was developed.
 
-ngain = ng + gain，从命名上可以看出该命令行工具能够生成 Angular 前端项目模板从而直接进入业务开发阶段，省去了项目开发初期的相关配置以及公共代码的编写工作。
+> ngain = ng + gain
+
+It can be seen from the naming that the scaffolding tool can generate the Angular front-end project template and directly enter the business development stage, eliminating the need for the initial configuration of the project development and the preparation of the common code.
 
 
 
-## 使用
+## Usage
 
-创建新项目
+### Install
 
-```bash
+```powershell
+npm i ngain-cli -g
+```
+
+
+
+### Create New Project
+
+```powershell
 ngain new|n [projectName]
 ```
 
-获取版本号
-```bash
+or
+
+```powershell
+npx ngain new|n [projectName]
+```
+
+run the above command directly in the target directory without installing this scaffolding tool globally
+
+
+
+### Version
+
+```powershell
 ngain -v
 ```
 
+or
+
+```powershell
+npx ngain -v
+```
+
+run the above command directly in the root directory of project without installing this scaffolding tool globally
 
 
-## 项目模板来源
+
+## Project Template
 
 [BarryLiu1995/angular-project-template](https://github.com/BarryLiu1995/angular-project-template)
